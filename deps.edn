@@ -4,5 +4,5 @@
 
  :aliases
         {:cljs
-         {:extra-deps  {}
+         {:extra-deps  {binaryage/devtools {:mvn/version "1.0.0"}}
           :extra-paths ["src/main"]}}}
