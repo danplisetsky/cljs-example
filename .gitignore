@@ -1,2 +1,7 @@
 # project files
 *.iml
+
+# shadow-cljs files
+
+.shadow-cljs/
+.cpcache/
