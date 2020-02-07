@@ -1,4 +1,6 @@
 {
-  "scripts": {
-  },
+  "scripts": {},
+  "devDependencies": {
+    "shadow-cljs": "^2.8.83"
+  }
 }
