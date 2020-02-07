@@ -1,7 +1,10 @@
 {
   "scripts": {
     "server": "shadow-cljs server",
-    "server:repl": "shadow-cljs clj-repl"
+    "server:repl": "shadow-cljs clj-repl",
+    "app:watch": "shadow-cljs watch app",
+    "app:repl": "shadow-cljs cljs-repl app",
+    "app:compile": "shadow-cljs compile app"
   },
   "devDependencies": {
     "shadow-cljs": "^2.8.83"
