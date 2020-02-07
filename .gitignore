@@ -6,4 +6,10 @@
 .cpcache/
 
 # npm files
-node_modules
+node_modules/
+
+# build artifacts
+!public/
+
+public/*
+!public/index.html
