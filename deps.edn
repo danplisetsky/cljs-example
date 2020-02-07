@@ -1,0 +1,3 @@
+{:deps {thheller/shadow-cljsjs {:mvn/version "0.0.21"}
+        }
+ }
