@@ -1,5 +1,8 @@
 {
-  "scripts": {},
+  "scripts": {
+    "server": "shadow-cljs server",
+    "server:repl": "shadow-cljs clj-repl"
+  },
   "devDependencies": {
     "shadow-cljs": "^2.8.83"
   }
