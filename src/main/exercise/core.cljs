@@ -43,14 +43,33 @@
       [:p (str "Loading" (-> (repeat @dots ".") string/join))])))
 
 
-(def primary-keys ["artistName" "trackName" "releaseDate" "primaryGenreName"])
-(def secondary-keys ["trackPrice"])
+(def primary-keys ["artistName"
+                   "trackName"
+                   {"releaseDate" (fn [value]
+                                    (-> value
+                                        js/Date.
+                                        .toDateString))}
+                   "primaryGenreName"])
+(def secondary-keys [{"trackPrice" (partial str "$ ")}])
 
 (defn item-column
   [entry keys]
   (into [:div]
         (map #(vector :p %)
-             (->> keys (select-keys entry) vals))))
+             (->> keys
+                  (map #(if (string? %)
+                          %
+                          (-> % first key)))
+                  (select-keys entry)
+                  (reduce-kv (fn [acc prop-key prop-value]
+                               (if-let [formatter (->> keys
+                                                       (filter #(and (map? %)
+                                                                     (get % prop-key)))
+                                                       (map #(get % prop-key))
+                                                       first)]
+                                 (conj acc (formatter prop-value))
+                                 (conj acc prop-value)))
+                             [])))))
 
 (defn item
   [result-entry primary-keys secondary-keys]
