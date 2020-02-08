@@ -1,3 +1,11 @@
-(ns exercise.core)
+(ns exercise.core
+  (:require [reagent.core :as r]))
 
-(js/alert "hello")
+(defn root []
+  (.getElementById js/document "app"))
+
+(defn mount-root! [component]
+  (r/render component (root)))
+
+(defn start []
+  (mount-root! nil))

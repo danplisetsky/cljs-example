@@ -10,4 +10,5 @@
                   :output-dir "public/js"
                   :modules    {:main {:entries [exercise.core]}}
                   :devtools   {:repl-pprint  true
-                               :repl-init-ns exercise.core}}}}
+                               :repl-init-ns exercise.core
+                               :after-load exercise.core/start}}}}
