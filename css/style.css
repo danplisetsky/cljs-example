@@ -1,0 +1,14 @@
+div>input#artist {
+  margin-left: 15px;
+}
+
+ul#search-results>li>div:first-of-type {
+  flex-grow: 1
+}
+
+ul#search-results>li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
