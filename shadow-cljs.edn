@@ -8,10 +8,11 @@
  :builds
            {:app          {:target     :browser
                            :output-dir "public/js"
+                           :asset-path "js"
                            :modules    {:main {:entries [exercise.core]}}
                            :devtools   {:repl-pprint  true
                                         :repl-init-ns exercise.core
-                                        :after-load   exercise.core/start}}
+                                        :after-load   exercise.core/init}}
             :test-browser {:target    :browser-test
                            :test-dir  "output/test-browser"
                            :ns-regexp "-test$"

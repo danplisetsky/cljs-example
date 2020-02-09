@@ -97,11 +97,14 @@
 
 ;; MOUNT
 
-(defn root []
+(defn root
+  []
   (.getElementById js/document "app"))
 
-(defn mount-root! [component]
+(defn mount-root!
+  [component]
   (r/render component (root)))
 
-(defn start []
+(defn ^:export init
+  []
   (mount-root! [app]))
