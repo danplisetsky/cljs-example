@@ -8,7 +8,8 @@
     "app:release": "shadow-cljs release app",
     "test-node:compile": "shadow-cljs compile test-node",
     "test-node:run": "node output/test-node/tests.js",
-    "test": "npm run test-node:compile && npm run test-node:run"
+    "test": "npm run test-node:compile && npm run test-node:run",
+    "clean": "rm -rf output/ public/js"
   },
   "devDependencies": {
     "shadow-cljs": "^2.8.83"
