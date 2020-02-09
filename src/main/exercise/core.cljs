@@ -105,6 +105,3 @@
 
 (defn start []
   (mount-root! [app]))
-
-(start)
-
