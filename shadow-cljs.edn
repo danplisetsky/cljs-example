@@ -6,14 +6,18 @@
  :dev-http {9000 "public"}
 
  :builds
-           {:app  {:target     :browser
-                   :output-dir "public/js"
-                   :modules    {:main {:entries [exercise.core]}}
-                   :devtools   {:repl-pprint  true
-                                :repl-init-ns exercise.core
-                                :after-load   exercise.core/start}}
-            :test {:target    :browser-test
-                   :test-dir  "output/test"
-                   :ns-regexp "-test$"
-                   :devtools  {:http-port 9002
-                               :http-root "output/test"}}}}
+           {:app          {:target     :browser
+                           :output-dir "public/js"
+                           :modules    {:main {:entries [exercise.core]}}
+                           :devtools   {:repl-pprint  true
+                                        :repl-init-ns exercise.core
+                                        :after-load   exercise.core/start}}
+            :test-browser {:target    :browser-test
+                           :test-dir  "output/test-browser"
+                           :ns-regexp "-test$"
+                           :devtools  {:http-port 9002
+                                       :http-root "output/test"}}
+            :test-node    {:target    :node-test
+                           :output-to "output/test-node/tests.js"
+                           :ns-regexp "-test$"
+                           :autorun   false}}}

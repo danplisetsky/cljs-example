@@ -4,7 +4,11 @@
     "server:repl": "shadow-cljs clj-repl",
     "app:watch": "shadow-cljs watch app",
     "app:repl": "shadow-cljs cljs-repl app",
-    "app:compile": "shadow-cljs compile app"
+    "app:compile": "shadow-cljs compile app",
+    "app:release": "shadow-cljs release app",
+    "test-node:compile": "shadow-cljs compile test-node",
+    "test-node:run": "node output/test-node/tests.js",
+    "test": "npm run test-node:compile && npm run test-node:run"
   },
   "devDependencies": {
     "shadow-cljs": "^2.8.83"
